@@ -1,0 +1,49 @@
+{% extends 'base/base.html' %}
+
+{% block content%}
+
+
+<table class ="table table=bordered">
+    <thead>
+        <tr>
+            <td>ID Alumno</td>
+            <td>Edad</td>
+            <td>Sexo</td>
+            <td>Comuna</td>
+            <td>Año cursado</td>
+            <td>RBD</td>
+            <td>Asistencia</td>
+            <td>ID Curso</td>
+            <td>Enseñanza</td>
+            <td>Grado</td>
+            <td>Letra</td>
+            <td>Promedio</td>
+
+        </tr>
+    </thead>
+    <tbody>
+         {% if alumnos_profe %}
+         {% for contador in alumnos_profe %}
+        <tr>
+            <td>{{contador.id_alumno}}</td>
+            <td>{{contador.edad}}</td>
+            <td>{{contador.sexo}}</td>
+            <td>{{contador.comuna}}</td>
+            <td>{{contador.año_cursado}}</td>
+            <td>{{contador.rbd}}</td>
+            <td>{{contador.asistencia}}</td>
+            <td>{{contador.id_curso}}</td>
+            <td>{{contador.enseñanza}}</td>
+            <td>{{contador.grado}}</td>
+            <td>{{contador.letra_curso}}</td>
+            <td>{{contador.promedio_general}}</td>       
+                    
+        {% endfor %}             
+        {% else %}
+        <h1>No hay registros </h1>
+
+        {% endif %}
+        </tbody>
+
+</table>
+{% endblock %}

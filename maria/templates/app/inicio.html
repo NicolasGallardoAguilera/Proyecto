@@ -1,0 +1,57 @@
+{% extends 'base/base.html' %}
+
+{% block title %} 
+
+{% endblock title %}
+
+{% block scripts %}
+{% endblock scripts %}
+
+{% block content %}
+
+
+<style> @import 'https://fonts.googleapis.com/css?family=Rubik+One';
+    body, html { 
+      margin: 0; 
+      padding: 0; 
+      height: 100%; 
+      width: 100%; 
+      background: #e53935;
+      background: linear-gradient(to left, #e53935 , #e35d5b);
+    }
+    
+    %test {
+      position: absolute;
+        content: '';
+        transition: all .5s;
+    }
+      </style>
+
+
+    <div> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <iframe aling="middle" width="500" margin:0 display:block auto height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=5d89dc58-6629-450d-831d-7abf1e4b657f&autoAuth=true&ctid=6fd48f41-af81-45a5-9c1e-e3990bc27e7c&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXNvdXRoLWNlbnRyYWwtdXMtcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D" frameborder="0" allowFullScreen="true"></iframe></div>
+
+
+    {% if perms.dashboard.view_curso %}
+    <div style="text-align: center;">
+        <a href='jefeutp/cursos'class="btn btn-primary" style="position: absolute;top: 11%; height:50px; width:200px">Ver Todos los cursos</a>
+    </div>
+    {% endif %}
+    {% if perms.dashboard.view_alumno %}
+    <div style="text-align: center;">
+        <a href='profesor/cursos' class="btn btn-primary" style="position: absolute;top: 30%; height:50px; width:200px">Ver mis cursos</a>
+    </div>
+    {% endif %}
+    {% if perms.dashboard.view_usuario %}
+    <div style="text-align: center;">
+        <a href='director/trabajadores' class="btn btn-primary" style="position: absolute;top: 50%; height:50px; width:200px">Ver Trabajadores</a>
+    </div>
+    {% endif %}
+    {% if perms.dashboard.view_usuario %}
+    <div style="text-align: center;">
+        <a href='jefeutp/cursos' class="btn btn-primary" style="position: absolute;top: 70%; height:50px; width:200px;color:azure">Ver todos los cursos</a>
+    </div>
+    {% endif %}
+    
+
+
+{% endblock content %}

@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+
+{% block content%}
+
+
+<table class ="table table=bordered">
+    <thead>
+        <tr>
+            <td>Codigo</td>
+            <td>Enseñanza</td>
+            <td>Grado</td>
+            <td>Letra</td>
+            <td>Profesor jefe</td>
+
+        </tr>
+    </thead>
+    <tbody>
+         {% if cursos_profesor %}
+         {% for contador in cursos_profesor %}
+        <tr>
+            <td>{{contador.codigo}}</td>
+            <td>{{contador.enseñanza}}</td>
+            <td>{{contador.grado}}</td>
+            <td>{{contador.letra}}</td>
+            <td>{{contador.profesor_jefe}}</td>
+            <td>
+                <a class ="btn btn-primary btn-xs" href='profesor/alumnos/{{contador.codigo}}' >ver curso</a>
+                </td>            
+                    
+        {% endfor %}             
+        {% else %}
+        <h1>No hay registros </h1>
+
+        {% endif %}
+        </tbody>
+
+</table>
+{% endblock %}

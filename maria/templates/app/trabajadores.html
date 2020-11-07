@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+
+{% block content%}
+
+
+<table class ="table table=bordered">
+    <thead>
+        <tr>
+            <td>Nombre usuario </td>
+            <td>Nombre </td>
+            <td>Apellido</td>
+            <td>Es profesor?</td>
+
+
+        </tr>
+    </thead>
+    <tbody>
+         {% if usuarios_plataforma %}
+         {% for contador in usuarios_plataforma %}
+        <tr>
+            <td>{{contador.nombre_usuario}}</td>
+            <td>{{contador.nombre}}</td>
+            <td>{{contador.apellido}}</td>
+            <td>{{contador.es_profesor}}</td>
+
+           
+                    
+        {% endfor %}             
+        {% else %}
+        <h1>No hay registros </h1>
+
+        {% endif %}
+        </tbody>
+
+</table>
+{% endblock %}
